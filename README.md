@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Maxxidata fullstack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto foi desenvolvido com intuito de ser avaliado durante processo de seleção da empresa.
 
-## Available Scripts
+Abaixo segue instruções de como rodar o backend, frontend e mobile.
 
-In the project directory, you can run:
+## Backend
 
-### `yarn start`
+Optamos por utilizar o Javascript com typescript. Acredito que a tipagem de dados é muito importante principalmente no backend. Banco de dados utilizei o `postgres` e para documentação foi utilizado o `swagger`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Instruções
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Com o docker devidamente configurado com imagem `postgres`, crie um banco de dados chamado `maxxidata` com as seguintes configurações:
+`porta: 5432, username: "postgres", "password": "docker"`
 
-### `yarn test`
+Em seguida:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. acesse a pasta `cd backend`
+2. execute o `yarn` para instalar as bibliotecas
+3. execute `yarn migration:run` para configurar as tabelas e relacionamentos no banco de dados.
+4. para rodar o servidor execute `yarn dev:server``
+5. para visualizar a documentação execute `yarn documentation` 
 
-### `yarn build`
+Obs: Não foi desenvolvido os testes por não dominar a ferramenta apesar de já ter utilizado o `jest` e também por falta de tempo para dar lida na documentação.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Frontend desenvolvido com ReactJs
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Instruções
 
-### `yarn eject`
+1. acesse a pasta `cd frontend`
+2. execute o `yarn` para instalar as bibliotecas
+3. execute o `yarn start`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Mobile
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Versão mobile desenvolvido com React Native
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Instruções
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. acesse a pasta `cd mobile`
+2. execute o `yarn` para instalar as bibliotecas
+3. caso esteja no ios, acesse a pasta `ios` e em seguida execute o  `pod install`
+4. na pasta mobile, execute `yarn ios` ou `yarn android` dependendo do simulador que estiver utilizando.
